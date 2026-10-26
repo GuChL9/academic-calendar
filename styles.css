@@ -1,0 +1,74 @@
+:root {
+  font-family: system-ui, -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+  font-synthesis: none;
+  color: #29384b;
+  background: #f5f7fa;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 1660px; padding: 38px 30px 28px; margin: auto; }
+h1 { margin: 0; font-size: 28px; letter-spacing: -.02em; }
+.page-header { margin-bottom: 26px; }
+form { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 18px 28px; margin-bottom: 24px; }
+fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+.field > label, legend { display: block; margin: 0 0 8px; padding: 0; font-size: 13px; font-weight: 600; }
+.year-input { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+.field input { min-height: 42px; border: 1px solid #b9c6d5; border-radius: 6px; padding: 8px 10px; font: inherit; color: inherit; background: #fff; }
+#year { width: 114px; }
+#teaching-start { width: 168px; }
+#year-end { font-size: 14px; color: #627184; white-space: nowrap; }
+.term-options { display: flex; gap: 6px; }
+.term-options label { position: relative; cursor: pointer; }
+.term-options input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.term-options span { display: block; min-height: 42px; padding: 10px 14px; border: 1px solid #b9c6d5; border-radius: 6px; font-size: 14px; line-height: 20px; background: #fff; }
+.term-options input:checked + span { background: #e7eff8; border-color: #6789b2; color: #28507e; }
+button { min-height: 42px; padding: 10px 22px; border: 1px solid #365f8f; border-radius: 6px; background: #365f8f; color: #fff; font: inherit; font-size: 14px; line-height: 20px; cursor: pointer; }
+button:hover { background: #2c507b; }
+button:active { background: #244467; }
+button:focus-visible, .field input:focus-visible, .date-scroll:focus-visible,
+.term-options input:focus-visible + span { outline: 3px solid #759bc5; outline-offset: 3px; }
+.field input[aria-invalid="true"] { border-color: #af3434; }
+.error { color: #a33131; font-size: 14px; line-height: 1.6; margin: 0; }
+form .error { flex-basis: 100%; }
+[hidden] { display: none !important; }
+.calendar { background: #fff; border: 1px solid #d4dfea; border-radius: 10px; min-width: 0; overflow: hidden; padding-bottom: 20px; }
+.table-heading { padding: 20px 22px 17px; }
+h2 { margin: 0 0 7px; font-size: 18px; line-height: 1.5; font-weight: 600; }
+#table-summary { margin: 0; color: #627184; font-size: 13px; line-height: 1.6; font-variant-numeric: tabular-nums; }
+.date-scroll { margin: 0 20px; border: 1px solid #d8e1ec; overflow-x: auto; scrollbar-color: #a3b4c9 #eef2f7; scrollbar-width: auto; }
+table { table-layout: fixed; border-spacing: 0; min-width: 100%; font-variant-numeric: tabular-nums; }
+.weekday-column { width: 56px; }
+.week-column { width: 42px; }
+th, td { padding: 0; text-align: center; border-right: 1px solid #dde5ef; border-bottom: 1px solid #dde5ef; }
+thead th { height: 38px; background: #edf2f8; color: #4d6480; font-weight: 500; font-size: 12px; border-right-color: #bdccde; white-space: nowrap; }
+.teaching-weeks th { height: 30px; background: #f5f8fc; }
+.teaching-weeks th:not(.weekday):not(:empty) { color: #28507e; background: #e7eff8; }
+tbody td { height: 46px; }
+.weekday { position: sticky; left: 0; z-index: 1; background: #f5f7fa; font-size: 12px; font-weight: 500; color: #52677f; border-right-color: #b3c4d8; }
+thead .weekday { background: #eaf0f7; }
+tr > :last-child { border-right: 0; }
+tbody tr:last-child > * { border-bottom: 0; }
+.outside { background: #f7f8fa; }
+.month-plain { background: #fff; }
+.month-tint { background: #f0f4f9; }
+.month-left { border-left: 1px solid #93aac6; }
+.month-top { border-top: 1px solid #93aac6; }
+.weekend { color: #60758f; }
+time { display: flex; height: 45px; align-items: center; justify-content: center; position: relative; }
+.day-number { font-size: 14px; line-height: 20px; }
+.month-label { position: absolute; right: 2px; top: 0; font-size: 10px; line-height: 13px; color: #365f8f; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (max-width: 600px) {
+  main { padding: 25px 16px; }
+  h1 { font-size: 25px; }
+  .page-header { margin-bottom: 22px; }
+  form { gap: 16px; }
+  .year-field { flex-basis: 100%; }
+  fieldset { flex-basis: 100%; }
+  button { margin-left: auto; padding-inline: 15px; }
+  .term-options span { padding-inline: 12px; }
+  .table-heading { padding: 16px; }
+  h2 { font-size: 16px; }
+  .date-scroll { margin-inline: 12px; }
+  .calendar { padding-bottom: 16px; }
+}

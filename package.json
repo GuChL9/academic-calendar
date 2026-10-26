@@ -1,0 +1,11 @@
+{
+  "name": "academic-calendar",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node serve.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

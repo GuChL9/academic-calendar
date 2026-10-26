@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="按学年查看学期日期和教学周">
+  <title>学期日期表</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <h1>学期日期表</h1>
+    </header>
+
+    <form id="options" novalidate>
+      <div class="field year-field">
+        <label for="year">学年起始年</label>
+        <div class="year-input">
+          <input id="year" name="year" type="number" inputmode="numeric" min="1900" max="2198"
+            step="1" required placeholder="如 2026">
+          <span id="year-end" aria-live="polite">— 学年</span>
+        </div>
+      </div>
+      <fieldset>
+        <legend>学期</legend>
+        <div class="term-options">
+          <label><input name="term" type="radio" value="autumn-winter" checked><span>秋冬学期</span></label>
+          <label><input name="term" type="radio" value="spring-summer"><span>春夏学期</span></label>
+        </div>
+      </fieldset>
+      <div class="field">
+        <label for="teaching-start">第一教学周周一</label>
+        <input id="teaching-start" name="teaching-start" type="date">
+      </div>
+      <button type="submit">生成日期表</button>
+      <p id="options-error" class="error" role="alert" hidden></p>
+    </form>
+
+    <section class="calendar" aria-labelledby="table-title">
+      <div class="table-heading" role="status" aria-atomic="true">
+        <h2 id="table-title">学期日期</h2>
+        <p id="table-summary"></p>
+      </div>
+      <div id="date-scroll" class="date-scroll" role="region" tabindex="0"
+        aria-labelledby="table-title" aria-describedby="table-help">
+        <table id="dates"></table>
+      </div>
+      <p id="table-help" class="sr-only">可用左右方向键滚动日期表，按 Tab 离开。</p>
+    </section>
+
+    <noscript><p class="error">请启用浏览器的 JavaScript 以查看日期表。</p></noscript>
+  </main>
+</body>
+</html>
